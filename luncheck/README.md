@@ -20,7 +20,7 @@
 * `LOGIDENT` = set this to suit your environment
 * `ALLLUNS` = total # LUNs which comprise your SANvol(s)
 * `MAXWAIT` = total number of times we’re going to loop
-* `SLEEP` = a “sensible”
+* `SLEEP` = a “sensible” time to wait between `cvlabel` runs
 
 **Installation**:
 

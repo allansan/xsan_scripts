@@ -4,20 +4,36 @@
 > 2017  
 
 **Description**:
+
 1. Count LUNs using `cvlabel` until we have the correct number for the SANvol
 2. When all LUNs are present, mount all  SANvols listed by `xsanctl`
 
 **Assumptions**: 
+
 * mount all Xsan volumes available
 * will be run as 'root' via LaunchDaemon
 * `xsand` is configured and running
 * all target Xsan nodes running on same OS version
 
-**Customisation**
+**Customisation**: 
+
 * `LOGIDENT` = set this to suit your environment
 * `ALLLUNS` = total # LUNs which comprise your SANvol(s)
 * `MAXWAIT` = total number of times we’re going to loop
 * `SLEEP` = a “sensible”
+
+**Installation**:
+
+```
+sudo cp com.10dot1.luncheck.plist /Library/LaunchDaemons/
+sudo chmod 644 /Library/LaunchDaemons/com.10dot1.luncheck.plist
+sudo chown 0:0 /Library/LaunchDaemons/com.10dot1.luncheck.plist
+sudo mkdir -p /Library/Scripts/Xsan/
+sudo cp luncheck.sh /Library/Scripts/Xsan/luncheck.sh
+sudo chmod 755 /Library/Scripts/Xsan/luncheck.sh
+sudo chown 0:0 /Library/Scripts/Xsan/luncheck.sh
+
+```
 
 **Trying to be helpful**
 

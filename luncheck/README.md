@@ -20,6 +20,7 @@
 * `SLEEP` = a “sensible”
 
 **Trying to be helpful**
+
 If you’re unsure how many LUNs you have in your environment, you should be able to find out by running the following on your MDC. This does assume that all LUNs in your fabric are labelled and in use:
 
 ```
